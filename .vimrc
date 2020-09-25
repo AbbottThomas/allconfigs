@@ -211,10 +211,19 @@ nnoremap L $
 nnoremap LL $A
 inoremap ( ()<LEFT>
 inoremap < <><LEFT>
-inoremap {<Space> {}<LEFT><CR><Esc>O
+inoremap [ []<LEFT>
+inoremap ] <RIGHT>
+"<CR>是enter键，<c-r>是 crtl + r
+inoremap {<Space> {}<LEFT><CR><Esc>O  
 inoremap { {}<LEFT>
+inoremap } <LEFT>
 inoremap ' ''<LEFT>
 inoremap " ""<LEFT>
+"fileencodeings 是以此按照下面格式打开，找到合适的
+"下面两个是保存和。。的默认编码
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
 autocmd BufNewFile *.cpp,*.[ch],*.sh,*.py,*.c  exec ":call SetTitle()"
 func SetTitle()
 	if &filetype == 'sh'
